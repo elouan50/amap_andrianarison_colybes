@@ -8,5 +8,9 @@
     <string name="pain">Pains</string>
     <string name="oeufs">Oeufs</string>
     <string name="miel">Miel</string>
+    <string name="panier_petit">Panier 5€</string>
+    <string name="panier_grand">Panier 10€</string>
+    <string name="fruits">Paniers de fruits au choix</string>
     <string name="text_history">Consulter l\'historique des commandes</string>
+    <string name="count_intial">0</string>
 </resources>

@@ -12,7 +12,10 @@
         android:theme="@style/Theme.AMAP"
         tools:targetApi="31">
         <activity
-            android:name=".SelectBread"
+            android:name=".SelectItem"
+            android:exported="false" />
+        <activity
+            android:name=".SelectFruit"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
