@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">AMAP</string>
     <string name="home_text">Bienvenue sur l\'application officielle de l\'AMAP</string>
+    <string name="select_item">Choisissez le type de produits</string>
     <string name="text_new">Passer une nouvelle commande</string>
+    <string name="panier1">Fruits</string>
+    <string name="panier2">Légumes</string>
+    <string name="pain">Pains</string>
+    <string name="oeufs">Oeufs</string>
+    <string name="miel">Miel</string>
     <string name="text_history">Consulter l\'historique des commandes</string>
 </resources>
