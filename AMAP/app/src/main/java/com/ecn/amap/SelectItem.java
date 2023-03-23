@@ -10,14 +10,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SelectItem extends AppCompatActivity {
+    private CommandeViewModel commandeViewModel;
     private static final int TEXT_REQUEST = 1;
     private static final int REQUEST_CODE_DATE_PICKER = 2;
+    private static final String LOG_TAG =
+            MainActivity.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,7 @@ public class SelectItem extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Log.d(LOG_TAG, "Date selected");
         Date livraison = new Date();
         Date today = new Date();
 
@@ -42,6 +47,8 @@ public class SelectItem extends AppCompatActivity {
 
         Commande commande = new Commande(today, livraison, 1);
         int commande_id = commande.getCommmande_id();
+        commandeViewModel.insert(commande);
+        Toast.makeText(getApplicationContext(), "Nouvelle commande créée", Toast.LENGTH_LONG).show();
         System.out.println(commande_id);
     }
 
