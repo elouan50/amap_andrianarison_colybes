@@ -18,6 +18,7 @@ import java.util.Date;
 
 public class SelectItem extends AppCompatActivity {
     private CommandeViewModel commandeViewModel;
+    private String commande_id;
     private static final int TEXT_REQUEST = 1;
     private static final int REQUEST_CODE_DATE_PICKER = 2;
     private static final String LOG_TAG =
@@ -26,36 +27,22 @@ public class SelectItem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_item);
+        Intent recup = getIntent();
+        commande_id = recup.getStringExtra("commande_id");
+
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.d(LOG_TAG, "Date selected");
-        Date livraison = new Date();
-        Date today = new Date();
 
-        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE_DATE_PICKER) {
-            String selectedDate = data.getStringExtra("selected_date");
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-            try {
-                livraison = dateFormat.parse(selectedDate);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-        }
-
-        Commande commande = new Commande(today, livraison, 1);
-        int commande_id = commande.getCommmande_id();
-        commandeViewModel.insert(commande);
-        Toast.makeText(getApplicationContext(), "Nouvelle commande créée", Toast.LENGTH_LONG).show();
-        System.out.println(commande_id);
     }
 
     @SuppressLint("RestrictedApi")
     public void launchFruits(View view) {
         Log.d(LOG_TAG, "Button clicked!");
         Intent intent = new Intent(this, SelectFruit.class);
+        intent.putExtra("commande_id", commande_id);
         startActivityForResult(intent, TEXT_REQUEST);
     }
 
