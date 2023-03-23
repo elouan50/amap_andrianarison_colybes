@@ -23,7 +23,7 @@ class CommandeRepository {
         });
     }
 
-    int getCommandeId() {
+    LiveData<Integer> getCommandeId() {
         return commandeDao.getCommandeId();
     }
 

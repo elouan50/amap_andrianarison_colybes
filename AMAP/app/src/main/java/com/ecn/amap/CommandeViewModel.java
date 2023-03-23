@@ -23,5 +23,7 @@ public class CommandeViewModel extends AndroidViewModel {
     }
     public void insert(Commande commande) {commandeRepository.insert(commande); }
 
-    public int getCommandeId() { return commandeRepository.getCommandeId(); }
+    public LiveData<Integer> getCommandeId() {
+        return commandeRepository.getCommandeId();
+    }
 }

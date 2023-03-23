@@ -17,5 +17,5 @@ public interface CommandeDao {
     LiveData<List<Commande>> getUserCommandes(int personne_id);
 
     @Query("SELECT MAX(commande.commmande_id) FROM commande")
-    int getCommandeId();
+    LiveData<Integer> getCommandeId();
 }

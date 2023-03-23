@@ -4,6 +4,8 @@ package com.ecn.amap;
 import static androidx.core.content.PackageManagerCompat.LOG_TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.annotation.SuppressLint;
@@ -23,6 +25,7 @@ public class SelectFruit extends AppCompatActivity {
     private int mCount2 = 0;
     private TextView mShowCount2;
     private ContientFruitViewModel contientFruitViewModel;
+    private CommandeViewModel commandeViewModel;
     private static final int TEXT_REQUEST = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,11 +68,21 @@ public class SelectFruit extends AppCompatActivity {
     public void launchItem(View view) {
         Log.d(LOG_TAG, "Button clicked!");
         Intent data = getIntent();
-        String commande_id = data.getStringExtra("commande_id");
-        int c_id = Integer.parseInt(commande_id);
-        ContientFruit contientFruit = new ContientFruit(c_id, 1, mCount);
-        contientFruitViewModel.insert(contientFruit);
-        Toast.makeText(getApplicationContext(), "Ajout des paniers de fruits", Toast.LENGTH_LONG).show();
+
+        commandeViewModel = new ViewModelProvider(this).get(CommandeViewModel.class);
+        LiveData<Integer> commande_id = commandeViewModel.getCommandeId();
+
+        commande_id.observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer value) {
+                // Récupérer l'ID du LiveData
+                Integer cId = commande_id.getValue();
+                ContientFruit contientFruit = new ContientFruit(cId, 1, mCount);
+                contientFruitViewModel.insert(contientFruit);
+                Toast.makeText(getApplicationContext(), "Paniers de fruits ajoutés au panier !", Toast.LENGTH_LONG).show();
+            }
+        });
+
 
         Intent intent = new Intent(this, SelectItem.class);
         startActivityForResult(intent, TEXT_REQUEST);
