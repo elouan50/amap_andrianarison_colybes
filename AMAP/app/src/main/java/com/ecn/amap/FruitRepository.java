@@ -2,17 +2,17 @@ package com.ecn.amap;
 
 import android.app.Application;
 
-class PainRepository {
-    private PainDao painDao;
+class FruitRepository {
+    private FruitDao fruitDao;
 
-    PainRepository(Application application) {
+    FruitRepository(Application application) {
         AmapRoomDatabase db = AmapRoomDatabase.getDatabase(application);
-        painDao = db.painDao();
+        fruitDao = db.fruitDao();
     }
 
-    void insert(Pain pain) {
+    void insert(Fruit fruit) {
         AmapRoomDatabase.databaseWriteExecutor.execute(() -> {
-            painDao.insert(pain);
+            fruitDao.insert(fruit);
         });
     }
 }

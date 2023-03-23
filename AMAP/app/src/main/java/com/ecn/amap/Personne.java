@@ -19,6 +19,10 @@ public class Personne {
         this.telephone = telephone;
     }
 
+    public int getPersonne_id() {
+        return personne_id;
+    }
+
     @NonNull
     public String getNom() {
         return nom;

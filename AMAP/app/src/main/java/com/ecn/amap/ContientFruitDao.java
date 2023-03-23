@@ -9,11 +9,11 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public interface ContientPainDao {
+public interface ContientFruitDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void insert(ContientPain contientPain);
+    void insert(ContientFruit contientFruit);
 
-    @Query("SELECT * FROM contient_pain")
-    LiveData<List<ContientPain>> getAllContientPain();
+    @Query("SELECT * FROM contient_fruit WHERE commande_id=:commande_id")
+    LiveData<List<ContientFruit>> getCommandeContientFruit(int commande_id);
 
 }

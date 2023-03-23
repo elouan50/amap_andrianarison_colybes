@@ -20,6 +20,10 @@ public class Commande {
         this.personne_id = personne_id;
     }
 
+    public int getCommmande_id() {
+        return commmande_id;
+    }
+
     @NonNull
     public Date getDate() {
         return date;

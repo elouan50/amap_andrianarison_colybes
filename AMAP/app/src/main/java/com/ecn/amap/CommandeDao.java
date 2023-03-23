@@ -13,6 +13,6 @@ public interface CommandeDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Commande personne);
 
-    @Query("SELECT * FROM commande")
-    LiveData<List<Commande>> getAllCommandes();
+    @Query("SELECT * FROM commande WHERE personne_id=:personne_id")
+    LiveData<List<Commande>> getUserCommandes(int personne_id);
 }

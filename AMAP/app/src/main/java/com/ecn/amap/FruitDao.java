@@ -5,7 +5,7 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 
 @Dao
-public interface PainDao {
+public interface FruitDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void insert(Pain pain);
+    void insert(Fruit fruit);
 }

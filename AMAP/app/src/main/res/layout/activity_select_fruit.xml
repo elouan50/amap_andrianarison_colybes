@@ -15,7 +15,7 @@
         android:fontFamily="sans-serif-light"
         android:text="@string/fruits"
         android:textAlignment="center"
-        android:textColor="#428707"
+        android:textColor="@android:color/holo_green_dark"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -150,8 +150,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="40dp"
-        android:text="Valider"
+        android:backgroundTint="@android:color/holo_green_dark"
         android:onClick="launchItem"
+        android:text="Valider"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

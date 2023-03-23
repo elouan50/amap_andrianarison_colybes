@@ -9,12 +9,12 @@ import androidx.room.RoomDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Personne.class, Commande.class, Pain.class, ContientPain.class}, version = 1, exportSchema = false)
+@Database(entities = {Personne.class, Commande.class, Fruit.class, ContientFruit.class}, version = 1, exportSchema = false)
 public abstract class AmapRoomDatabase extends RoomDatabase {
     public abstract PersonneDao personneDao();
     public abstract CommandeDao commandDao();
-    public abstract PainDao painDao();
-    public abstract ContientPainDao contientPainDao();
+    public abstract FruitDao fruitDao();
+    public abstract ContientFruitDao contientFruitDao();
 
     private static volatile AmapRoomDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;

@@ -9,7 +9,7 @@ import java.util.List;
 class CommandeRepository {
 
     private CommandeDao commandeDao;
-    private LiveData<List<Commande>> allCommandes;
+    private LiveData<List<Commande>> userCommandes;
 
     CommandeRepository(Application application) {
         AmapRoomDatabase db = AmapRoomDatabase.getDatabase(application);
@@ -22,7 +22,9 @@ class CommandeRepository {
         });
     }
 
-    LiveData<List<Commande>> getAllCommandes() {
-        return allCommandes;
+
+    LiveData<List<Commande>> getUserCommandes(Personne personne) {
+        userCommandes = commandeDao.getUserCommandes(personne.getPersonne_id());
+        return userCommandes;
     }
 }
