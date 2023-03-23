@@ -12,6 +12,6 @@ Une fois la date de la commande sélectionné, l'utilisateur est redirigé vers 
 Sur cette page, nous avons seulement implémenté le lien vers la page des fruits qui permet de choisir le type de panier que nous souhaitons choisir.
 Une fois le nombre et le type de paniers choisi, le bouton valider redirige vers la page de sélection des différents produits.
 
-En ce qui concerne l'emulateur utilisé, nous avons testé le fonctionnement sur deux appareils différents, dont nous vons précisons les résolutions:
+En ce qui concerne l'emulateur utilisé, nous avons testé le fonctionnement sur deux appareils différents, dont nous vous précisons les résolutions:
 - 1440 x 3040 
 - 1080 x 1920
