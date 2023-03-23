@@ -14,6 +14,14 @@ public class ContientFruit {
         this.quantite = quantite;
     }
 
+    public void setCommande_id(int commande_id) {
+        this.commande_id = commande_id;
+    }
+
+    public void setFruit_id(int fruit_id) {
+        this.fruit_id = fruit_id;
+    }
+
     public int getCommande_id() {
         return commande_id;
     }

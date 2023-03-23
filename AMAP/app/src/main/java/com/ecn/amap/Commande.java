@@ -24,6 +24,10 @@ public class Commande {
         return commmande_id;
     }
 
+    public void setCommmande_id(int commmande_id) {
+        this.commmande_id = commmande_id;
+    }
+
     @NonNull
     public Date getDate() {
         return date;

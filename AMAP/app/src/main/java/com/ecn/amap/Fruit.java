@@ -9,6 +9,14 @@ public class Fruit {
     private int fruit_id;
     private String description;
 
+    public int getFruit_id() {
+        return fruit_id;
+    }
+
+    public void setFruit_id(int fruit_id) {
+        this.fruit_id = fruit_id;
+    }
+
     public Fruit(String description){
         this.description = description;
     }

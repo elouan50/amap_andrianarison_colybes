@@ -23,6 +23,10 @@ public class Personne {
         return personne_id;
     }
 
+    public void setPersonne_id(int personne_id) {
+        this.personne_id = personne_id;
+    }
+
     @NonNull
     public String getNom() {
         return nom;
