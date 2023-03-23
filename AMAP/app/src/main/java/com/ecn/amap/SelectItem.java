@@ -58,4 +58,11 @@ public class SelectItem extends AppCompatActivity {
         Intent intent = new Intent(this, SelectFruit.class);
         startActivityForResult(intent, TEXT_REQUEST);
     }
+
+    @SuppressLint("RestrictedApi")
+    public void launchMainActivity(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivityForResult(intent, TEXT_REQUEST);
+    }
 }
