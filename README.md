@@ -16,3 +16,6 @@ Lorsque l'on est sur la page de sélection des différents produits, on peut rev
 En ce qui concerne l'emulateur utilisé, nous avons testé le fonctionnement sur deux appareils différents, dont nous vous précisons les résolutions:
 - 1440 x 3040 
 - 1080 x 1920
+
+Pour le passage des informations, nous avons ajouté une commande suite à la saisie de la date dans la pop-up. 
+Nous avons par ailleurs ajouté des paniers de fruits 5€ dans la base de données dans la page selectFruit.
