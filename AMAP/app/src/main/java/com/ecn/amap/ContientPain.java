@@ -1,0 +1,24 @@
+package com.ecn.amap;
+
+import androidx.room.Entity;
+
+@Entity(tableName = "contient_pain", primaryKeys = {"commande_id", "pain_id"})
+public class ContientPain {
+    private int commande_id;
+    private int pain_id;
+    private int quantite;
+
+    public ContientPain(int commande_id, int pain_id, int quantite){
+        this.commande_id = commande_id;
+        this.pain_id = pain_id;
+        this.quantite = quantite;
+    }
+
+    public int getQuantite() {
+        return quantite;
+    }
+
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
+    }
+}
