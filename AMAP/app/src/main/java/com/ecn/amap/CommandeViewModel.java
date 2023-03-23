@@ -12,7 +12,9 @@ public class CommandeViewModel extends AndroidViewModel {
     private LiveData<List<Commande>> userCommandes;
 
     public CommandeViewModel(Application application) {
+
         super(application);
+        commandeRepository = new CommandeRepository(application);
     }
 
     LiveData<List<Commande>> getUserCommandes(Personne personne) {

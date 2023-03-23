@@ -17,8 +17,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+
 import java.text.BreakIterator;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,16 +32,19 @@ public class MainActivity extends AppCompatActivity {
     private EditText mMessageEditText;
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
+    private CommandeViewModel commandeViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        commandeViewModel = new ViewModelProvider(this).get(CommandeViewModel.class);
 
         View selectDateButton = findViewById(R.id.button_new);
         selectDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 showDatePickerDialog();
             }
         });
@@ -53,8 +61,14 @@ public class MainActivity extends AppCompatActivity {
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        Date livraison = new Date(dayOfMonth, monthOfYear, year);
+                        Date today = new Date();
+                        Commande commande = new Commande(today, livraison, 1);
+                        int commande_id = commande.getCommmande_id();
+                        commandeViewModel.insert(commande);
+                        Toast.makeText(getApplicationContext(), "Nouvelle commande créée", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(MainActivity.this, SelectItem.class);
-                        intent.putExtra("selected_date", dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                        intent.putExtra("commande_id", commande_id);
                         startActivity(intent);
                     }
                 },

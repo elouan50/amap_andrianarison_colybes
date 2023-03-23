@@ -12,12 +12,6 @@
         android:theme="@style/Theme.AMAP"
         tools:targetApi="31">
         <activity
-            android:name=".SelectItem"
-            android:exported="false" />
-        <activity
-            android:name=".SelectFruit"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -26,6 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SelectItem"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".SelectFruit"
+            android:exported="false"
+            android:parentActivityName=".SelectItem"/>
     </application>
 
 </manifest>

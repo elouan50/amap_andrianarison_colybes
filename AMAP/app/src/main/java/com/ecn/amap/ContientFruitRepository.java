@@ -21,6 +21,7 @@ class ContientFruitRepository {
         });
     }
 
+
     LiveData<List<ContientFruit>> getCommandeContientFruit(Commande commande) {
         commandeContientFruit = contientFruitDao.getCommandeContientFruit(commande.getCommmande_id());
         return commandeContientFruit;

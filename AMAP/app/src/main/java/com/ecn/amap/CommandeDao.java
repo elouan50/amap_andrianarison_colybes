@@ -11,7 +11,7 @@ import java.util.List;
 @Dao
 public interface CommandeDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void insert(Commande personne);
+    void insert(Commande commande);
 
     @Query("SELECT * FROM commande WHERE personne_id=:personne_id")
     LiveData<List<Commande>> getUserCommandes(int personne_id);
