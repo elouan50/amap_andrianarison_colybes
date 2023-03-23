@@ -4,7 +4,7 @@ Pour cela, nous avons implémenté différentes vues:
 - la page d'accueil
 - nouvelle commande
 - page de sélection de fruits
-- récapitualtif des commandes
+- récapitulatif des commandes
 
 La page d'accueil propose deux choix: Accéder à l'historique des commandes et Faire une nouvelle commmande. 
 Nous avons seulement implémenté la fonctionnalité de nouvelle commande qui fait apparaître un pop-up dans la page afin de sélectionner la date de la commande.
