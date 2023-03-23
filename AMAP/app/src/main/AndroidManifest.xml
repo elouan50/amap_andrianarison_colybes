@@ -23,11 +23,19 @@
         <activity
             android:name=".SelectItem"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".SelectFruit"
             android:exported="false"
-            android:parentActivityName=".SelectItem"/>
+            android:parentActivityName=".SelectItem">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

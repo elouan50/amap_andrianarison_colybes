@@ -12,7 +12,10 @@ public class ContientFruitViewModel extends AndroidViewModel {
     private LiveData<List<ContientFruit>> commandeContientFruit;
 
     public ContientFruitViewModel(Application application) {
+
         super(application);
+
+        contientFruitRepository = new ContientFruitRepository(application);
     }
 
     LiveData<List<ContientFruit>> getCommandeContientFruit(Commande commande) {

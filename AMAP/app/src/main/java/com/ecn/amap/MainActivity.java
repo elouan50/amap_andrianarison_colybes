@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
     private CommandeViewModel commandeViewModel;
+    public static final String EXTRA_MESSAGE = "com.ecn.amap.extra.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                         commandeViewModel.insert(commande);
                         Toast.makeText(getApplicationContext(), "Nouvelle commande créée", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(MainActivity.this, SelectItem.class);
-                        intent.putExtra("commande_id", commande_id);
+                        intent.putExtra(EXTRA_MESSAGE, commande_id);
                         startActivity(intent);
                     }
                 },

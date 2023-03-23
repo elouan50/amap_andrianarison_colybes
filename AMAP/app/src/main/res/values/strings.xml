@@ -13,4 +13,9 @@
     <string name="fruits">Paniers de fruits au choix</string>
     <string name="text_history">Consulter l\'historique des commandes</string>
     <string name="count_intial">0</string>
+    <string name="remove_one">Removes one item from bag</string>
+    <string name="valider">Valider</string>
+    <string name="add_one">Add one item to the bag</string>
+    <string name="panier_2">Panier de fruits 2 personnes</string>
+    <string name="panier_1">Panier de fruits 1 personne</string>
 </resources>

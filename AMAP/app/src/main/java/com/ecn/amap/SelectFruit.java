@@ -65,7 +65,7 @@ public class SelectFruit extends AppCompatActivity {
     public void launchItem(View view) {
         Log.d(LOG_TAG, "Button clicked!");
         Intent data = getIntent();
-        String commande_id = data.getStringExtra("commande_id");
+        String commande_id = data.getStringExtra(SelectItem.EXTRA_ITEM);
         int c_id = Integer.parseInt(commande_id);
         ContientFruit contientFruit = new ContientFruit(c_id, 1, mCount);
         contientFruitViewModel.insert(contientFruit);

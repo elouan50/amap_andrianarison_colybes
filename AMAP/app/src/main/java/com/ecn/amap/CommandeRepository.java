@@ -10,6 +10,7 @@ class CommandeRepository {
 
     private CommandeDao commandeDao;
     private LiveData<List<Commande>> userCommandes;
+    private int cid;
 
     CommandeRepository(Application application) {
         AmapRoomDatabase db = AmapRoomDatabase.getDatabase(application);
@@ -22,6 +23,9 @@ class CommandeRepository {
         });
     }
 
+    int getCommandeId() {
+        return commandeDao.getCommandeId();
+    }
 
     LiveData<List<Commande>> getUserCommandes(Personne personne) {
         userCommandes = commandeDao.getUserCommandes(personne.getPersonne_id());

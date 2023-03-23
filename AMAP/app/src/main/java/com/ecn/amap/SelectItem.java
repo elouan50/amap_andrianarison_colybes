@@ -21,6 +21,7 @@ public class SelectItem extends AppCompatActivity {
     private String commande_id;
     private static final int TEXT_REQUEST = 1;
     private static final int REQUEST_CODE_DATE_PICKER = 2;
+    public static final String EXTRA_ITEM = "com.ecn.twoactivities.extra.ITEM";
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
     @Override
@@ -28,9 +29,11 @@ public class SelectItem extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_item);
         Intent recup = getIntent();
-        commande_id = recup.getStringExtra("commande_id");
+        commande_id = recup.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
+        Toast.makeText(getApplicationContext(), "Infos en transit : commande_id = "+commande_id, Toast.LENGTH_LONG).show();
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -42,7 +45,7 @@ public class SelectItem extends AppCompatActivity {
     public void launchFruits(View view) {
         Log.d(LOG_TAG, "Button clicked!");
         Intent intent = new Intent(this, SelectFruit.class);
-        intent.putExtra("commande_id", commande_id);
+        intent.putExtra(EXTRA_ITEM, commande_id);
         startActivityForResult(intent, TEXT_REQUEST);
     }
 

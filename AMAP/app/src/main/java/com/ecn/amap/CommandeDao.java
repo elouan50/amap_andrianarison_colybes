@@ -15,4 +15,7 @@ public interface CommandeDao {
 
     @Query("SELECT * FROM commande WHERE personne_id=:personne_id")
     LiveData<List<Commande>> getUserCommandes(int personne_id);
+
+    @Query("SELECT MAX(commande.commande_id) FROM commande")
+    int getCommandeId();
 }

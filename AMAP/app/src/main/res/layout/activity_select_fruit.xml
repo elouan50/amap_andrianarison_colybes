@@ -5,7 +5,7 @@
     android:id="@+id/validate"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SelectItem">
+    tools:context=".SelectFruit">
 
     <TextView
         android:id="@+id/home_text"
@@ -22,13 +22,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imageButton6"
         android:layout_width="110dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/white"
-        android:onClick="launchFruitActivity"
+        android:contentDescription="@string/panier_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_text"
@@ -59,12 +59,13 @@
         app:layout_constraintStart_toStartOf="@+id/imageButton8"
         app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imageButton8"
         android:layout_width="110dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/white"
+        android:contentDescription="@string/panier_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plus"
@@ -74,25 +75,27 @@
         android:id="@+id/plus"
         android:layout_width="42dp"
         android:layout_height="27dp"
-        android:layout_marginEnd="140dp"
+        android:layout_marginStart="20dp"
         android:backgroundTint="@color/white"
         android:onClick="countUp"
         android:rotation="0"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/add_one"
+        app:layout_constraintStart_toEndOf="@+id/show_count"
         app:layout_constraintTop_toBottomOf="@+id/text_new"
-        app:srcCompat="@android:drawable/ic_menu_add" />/>
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
     <ImageButton
         android:id="@+id/less"
         android:layout_width="42dp"
         android:layout_height="27dp"
-        android:layout_marginStart="140dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="@color/white"
         android:onClick="countDown"
         android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/remove_one"
+        app:layout_constraintEnd_toStartOf="@+id/show_count"
         app:layout_constraintTop_toBottomOf="@+id/text_new"
-        app:srcCompat="@android:drawable/ic_menu_delete" />/>
+        app:srcCompat="@android:drawable/ic_menu_delete" />
 
     <TextView
         android:id="@+id/show_count"
@@ -103,19 +106,20 @@
         android:text="@string/count_intial"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/plus"
-        app:layout_constraintStart_toEndOf="@+id/less"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_new" />
 
     <ImageButton
         android:id="@+id/plus2"
         android:layout_width="42dp"
         android:layout_height="27dp"
-        android:layout_marginEnd="140dp"
+        android:layout_marginStart="20dp"
         android:backgroundTint="@color/white"
         android:onClick="countUp2"
         android:rotation="0"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/add_one"
+        app:layout_constraintStart_toEndOf="@+id/show_count2"
         app:layout_constraintTop_toBottomOf="@+id/text_new3"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
@@ -123,11 +127,12 @@
         android:id="@+id/less2"
         android:layout_width="42dp"
         android:layout_height="27dp"
-        android:layout_marginStart="140dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="@color/white"
         android:onClick="countDown2"
         android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/remove_one"
+        app:layout_constraintEnd_toStartOf="@+id/show_count2"
         app:layout_constraintTop_toBottomOf="@+id/text_new3"
         app:srcCompat="@android:drawable/ic_menu_delete" />
 
@@ -140,8 +145,8 @@
         android:text="@string/count_intial"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/plus2"
-        app:layout_constraintStart_toEndOf="@+id/less2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_new3" />
 
     <Button
@@ -152,7 +157,7 @@
         android:layout_marginBottom="10dp"
         android:backgroundTint="@android:color/holo_green_dark"
         android:onClick="launchItem"
-        android:text="Valider"
+        android:text="@string/valider"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
