@@ -1,9 +1,13 @@
-package com.ecn.amap;
+package com.ecn.amap.viewmodel;
 
 import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+
+import com.ecn.amap.entity.Commande;
+import com.ecn.amap.entity.Personne;
+import com.ecn.amap.repository.CommandeRepository;
 
 import java.util.List;
 

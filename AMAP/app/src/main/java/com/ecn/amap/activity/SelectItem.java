@@ -1,24 +1,16 @@
-package com.ecn.amap;
+package com.ecn.amap.activity;
 
-
-import static androidx.core.content.PackageManagerCompat.LOG_TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.PackageManagerCompat;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.ecn.amap.R;
+import com.ecn.amap.viewmodel.CommandeViewModel;
 
 public class SelectItem extends AppCompatActivity {
     private CommandeViewModel commandeViewModel;

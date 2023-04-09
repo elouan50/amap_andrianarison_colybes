@@ -7,6 +7,15 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
+import com.ecn.amap.dao.CommandeDao;
+import com.ecn.amap.dao.ContientFruitDao;
+import com.ecn.amap.dao.FruitDao;
+import com.ecn.amap.dao.PersonneDao;
+import com.ecn.amap.entity.Commande;
+import com.ecn.amap.entity.ContientFruit;
+import com.ecn.amap.entity.Fruit;
+import com.ecn.amap.entity.Personne;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -20,10 +29,10 @@ public abstract class AmapRoomDatabase extends RoomDatabase {
 
     private static volatile AmapRoomDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
-    static final ExecutorService databaseWriteExecutor =
+    public static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    static AmapRoomDatabase getDatabase(final Context context) {
+    public static AmapRoomDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
             synchronized (AmapRoomDatabase.class) {
                 if (INSTANCE == null) {

@@ -1,10 +1,10 @@
-package com.ecn.amap;
+package com.ecn.amap.repository;
 
 import android.app.Application;
 
-import androidx.lifecycle.LiveData;
-
-import java.util.List;
+import com.ecn.amap.AmapRoomDatabase;
+import com.ecn.amap.dao.PersonneDao;
+import com.ecn.amap.entity.Personne;
 
 class PersonneRepository {
 

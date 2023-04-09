@@ -1,4 +1,4 @@
-package com.ecn.amap;
+package com.ecn.amap.entity;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;

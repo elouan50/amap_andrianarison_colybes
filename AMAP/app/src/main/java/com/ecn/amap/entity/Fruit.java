@@ -1,4 +1,4 @@
-package com.ecn.amap;
+package com.ecn.amap.entity;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

@@ -1,10 +1,11 @@
-package com.ecn.amap;
+package com.ecn.amap.dao;
 
 import androidx.room.Dao;
-import androidx.room.Index;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+
+import com.ecn.amap.entity.Personne;
 
 @Dao
 public interface PersonneDao {

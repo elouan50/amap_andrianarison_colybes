@@ -1,4 +1,4 @@
-package com.ecn.amap;
+package com.ecn.amap.activity;
 
 
 import static androidx.core.content.PackageManagerCompat.LOG_TAG;
@@ -16,7 +16,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Date;
+import com.ecn.amap.R;
+import com.ecn.amap.entity.ContientFruit;
+import com.ecn.amap.viewmodel.CommandeViewModel;
+import com.ecn.amap.viewmodel.ContientFruitViewModel;
 
 public class SelectFruit extends AppCompatActivity {
 

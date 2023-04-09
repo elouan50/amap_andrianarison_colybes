@@ -1,8 +1,10 @@
-package com.ecn.amap;
+package com.ecn.amap.dao;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
+
+import com.ecn.amap.entity.Fruit;
 
 @Dao
 public interface FruitDao {

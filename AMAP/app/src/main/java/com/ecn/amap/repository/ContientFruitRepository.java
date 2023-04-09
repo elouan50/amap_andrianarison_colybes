@@ -1,28 +1,33 @@
-package com.ecn.amap;
+package com.ecn.amap.repository;
 
 import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
+import com.ecn.amap.AmapRoomDatabase;
+import com.ecn.amap.entity.Commande;
+import com.ecn.amap.dao.ContientFruitDao;
+import com.ecn.amap.entity.ContientFruit;
+
 import java.util.List;
 
-class ContientFruitRepository {
+public class ContientFruitRepository {
     private ContientFruitDao contientFruitDao;
     private LiveData<List<ContientFruit>> commandeContientFruit;
 
-    ContientFruitRepository(Application application) {
+    public ContientFruitRepository(Application application) {
         AmapRoomDatabase db = AmapRoomDatabase.getDatabase(application);
         contientFruitDao = db.contientFruitDao();
     }
 
-    void insert(ContientFruit contientFruit) {
+    public void insert(ContientFruit contientFruit) {
         AmapRoomDatabase.databaseWriteExecutor.execute(() -> {
             contientFruitDao.insert(contientFruit);
         });
     }
 
 
-    LiveData<List<ContientFruit>> getCommandeContientFruit(Commande commande) {
+    public LiveData<List<ContientFruit>> getCommandeContientFruit(Commande commande) {
         commandeContientFruit = contientFruitDao.getCommandeContientFruit(commande.getCommmande_id());
         return commandeContientFruit;
     }
