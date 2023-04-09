@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".SelectItem">
 
     <TextView
@@ -26,12 +27,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginBottom="40dp"
         android:backgroundTint="@color/white"
         android:onClick="launchFruits"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton8"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/panier1" />
+        app:layout_constraintTop_toTopOf="@+id/imageButton7"
+        app:srcCompat="@drawable/panier1"
+        android:contentDescription="@string/commandez_vos_fruits" />
 
     <TextView
         android:id="@+id/text_new"
@@ -62,15 +63,14 @@
         android:id="@+id/text_new5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:fontFamily="sans-serif-light"
         android:text="@string/miel"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageButton12"
         app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="@+id/imageButton12" />
+        app:layout_constraintStart_toStartOf="@+id/imageButton12"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton12" />
 
     <TextView
         android:id="@+id/text_new4"
@@ -102,12 +102,12 @@
         android:id="@+id/imageButton7"
         android:layout_width="88dp"
         android:layout_height="91dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="40dp"
         android:backgroundTint="@color/white"
-        android:contentDescription="Légumes"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton10"
+        android:contentDescription="@string/commandez_vos_legumes"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_text"
         app:srcCompat="@drawable/panier2" />
 
     <ImageButton
@@ -115,32 +115,35 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginBottom="40dp"
         android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton12"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/egg" />
+        app:layout_constraintTop_toTopOf="@+id/imageButton10"
+        app:srcCompat="@drawable/egg"
+        android:contentDescription="@string/commandez_vos_oeufs" />
 
     <ImageButton
         android:id="@+id/imageButton10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="40dp"
         android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton12"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/bread" />
+        app:layout_constraintTop_toTopOf="@+id/text_new2"
+        app:srcCompat="@drawable/bread"
+        android:contentDescription="@string/commandez_votre_pain" />
 
     <ImageButton
         android:id="@+id/imageButton12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/text_new5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/honey" />
+        app:layout_constraintTop_toTopOf="@+id/text_new4"
+        app:srcCompat="@drawable/honey"
+        android:contentDescription="@string/commandez_votre_miel" />
 
     <ImageButton
         android:id="@+id/imageButton13"
@@ -150,5 +153,6 @@
         android:onClick="launchMainActivity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_home_24" />
+        app:srcCompat="@drawable/baseline_home_24"
+        android:contentDescription="@string/home" />
 </androidx.constraintlayout.widget.ConstraintLayout>

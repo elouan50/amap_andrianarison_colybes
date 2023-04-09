@@ -18,4 +18,15 @@
     <string name="add_one">Add one item to the bag</string>
     <string name="panier_2">Panier de fruits 2 personnes</string>
     <string name="panier_1">Panier de fruits 1 personne</string>
+    <string name="commandez_vos_fruits">Commandez vos fruits.</string>
+    <string name="commandez_vos_legumes">Commandez vos légumes</string>
+    <string name="commandez_vos_oeufs">Commandez vos oeufs</string>
+    <string name="commandez_votre_pain">Commandez votre pain</string>
+    <string name="commandez_votre_miel">Commandez votre miel</string>
+    <string name="home">Home</string>
+    <string name="consultez_vos_commandes">Consultez vos commandes</string>
+    <string name="effectuez_une_commande">Effectuez une commande</string>
+    <string name="broccoli">broccoli</string>
+    <string name="apple">apple</string>
+    <string name="leek">leek</string>
 </resources>
